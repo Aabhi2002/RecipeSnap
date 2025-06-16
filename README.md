@@ -1,14 +1,14 @@
 # 🍳 RecipeSnap - AI Cooking Assistant
 
 RecipeSnap is an AI-powered cooking assistant that helps you discover delicious recipes based on ingredients you have in your fridge. Simply upload a photo of your ingredients or type them in, and get personalized recipe suggestions powered by OpenAI's advanced AI models.
-![image](https://github.com/user-attachments/assets/9a94c226-8aba-4eb8-88aa-027a438fc5b0)
 
+![RecipeSnap Application](image.png)
 
 ## ✨ Features
 
 ### 🤖 AI-Powered Analysis
 
-- **Image Recognition**: Upload photos of ingredients for automatic identification using OpenAI Vision API (GPT-4o)
+- **Image Recognition**: Upload photos of ingredients for automatic identification using OpenAI Vision API (GPT-4)
 - **Recipe Generation**: Get personalized recipe suggestions using GPT-3.5-turbo
 - **Smart Suggestions**: AI analyzes your ingredients and suggests practical, achievable recipes
 
@@ -21,32 +21,10 @@ RecipeSnap is an AI-powered cooking assistant that helps you discover delicious 
 
 ### 🎨 Modern UI/UX
 
-- **Clean Design**: Minimalist interface with transparent background
+- **Clean Design**: Minimalist interface with glassmorphism effects
 - **Scrollable Results**: Fixed-height recipe section with smooth scrolling
 - **Visual Feedback**: Clear status indicators and progress feedback
 - **Intuitive Navigation**: Tab-based interface for easy switching between input methods
-
-## 🏗️ Project Structure
-
-```
-receipe_snap/
-├── backend/                 # Node.js + Express API
-│   ├── src/
-│   │   ├── controllers/     # API route handlers
-│   │   └── routes/          # Express routes
-│   ├── uploads/             # Temporary image storage
-│   ├── package.json
-│   └── index.js            # Main server file
-├── frontend/               # React + TypeScript UI
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/          # Application pages
-│   │   ├── config/         # API configuration
-│   │   └── utils/          # Utility functions
-│   ├── package.json
-│   └── index.html
-└── README.md              # This file
-```
 
 ## 🚀 Quick Start
 
@@ -198,128 +176,81 @@ VITE_API_URL=http://localhost:5000/api
 
 ### 1. Image Upload Method
 
-1. Click the "Upload Image" tab
+1. Click the "Upload Image" button
 2. Select an image of your ingredients
-3. Preview the image to confirm selection
-4. Click "Analyze Image & Get Recipes"
-5. View AI-generated recipe suggestions
+3. Preview the image and click "Analyze Image & Get Recipes"
+4. Wait for the AI to process your image
+5. View the identified ingredients and recipe suggestions
 
 ### 2. Text Input Method
 
-1. Click the "Type Ingredients" tab
-2. Enter your ingredients in the text area
+1. Click the "Type Ingredients" button
+2. Enter your ingredients, separated by commas
 3. Click "Get Recipe Suggestions"
-4. View AI-generated recipe suggestions
-
-### 3. Recipe Results
-
-- **Identified Ingredients**: Shows what the AI detected in your image
-- **Recipe Suggestions**: 2-3 practical recipes with ingredients and instructions
-- **Scrollable Content**: Recipe section has fixed height with smooth scrolling
+4. View your personalized recipe suggestions
 
 ## 🛠️ Development
 
-### Backend Development
+### Project Structure
+
+```
+receipe_snap/
+├── backend/                 # Node.js + Express API
+│   ├── src/
+│   │   ├── controllers/     # API route handlers
+│   │   └── routes/          # Express routes
+│   ├── uploads/             # Temporary image storage
+│   ├── package.json
+│   └── index.js            # Main server file
+├── frontend/               # React + TypeScript UI
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/          # Application pages
+│   │   ├── config/         # API configuration
+│   │   └── utils/          # Utility functions
+│   ├── package.json
+│   └── index.html
+└── README.md              # This file
+```
+
+### Running Tests
 
 ```bash
+# Backend tests
 cd backend
-npm run dev    # Start with nodemon for auto-reload
-npm start      # Start production server
+npm test
+
+# Frontend tests
+cd frontend
+npm test
 ```
 
-### Frontend Development
+### Building for Production
 
 ```bash
+# Backend build
+cd backend
+npm run build
+
+# Frontend build
 cd frontend
-npm run dev    # Start development server
-npm run build  # Build for production
-npm run preview # Preview production build
+npm run build
 ```
-
-### Code Structure
-
-**Backend:**
-
-- `index.js` - Express server setup
-- `src/controllers/recipeController.js` - Business logic
-- `src/routes/recipeRoutes.js` - API routes and file upload
-
-**Frontend:**
-
-- `src/pages/public/recipe-snap.tsx` - Main application component
-- `src/config/api.ts` - API configuration
-- `src/main.tsx` - Application entry point
-
-## 🔒 Security & Best Practices
-
-- **Environment Variables**: Sensitive data stored in `.env` files
-- **File Validation**: Only image files accepted for upload
-- **File Size Limits**: 5MB maximum file size
-- **Automatic Cleanup**: Uploaded files automatically deleted after processing
-- **Error Handling**: Comprehensive error handling with user-friendly messages
-
-## 🚀 Deployment
-
-### Backend Deployment
-
-1. Set environment variables on your hosting platform
-2. Install dependencies: `npm install`
-3. Start server: `npm start`
-
-### Frontend Deployment
-
-1. Build the application: `npm run build`
-2. Deploy the `dist/` folder to your hosting platform
-3. Set `VITE_API_URL` to your backend URL
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Backend not starting:**
-
-- Check if OpenAI API key is set in `.env`
-- Ensure port 5000 is not in use
-- Verify all dependencies are installed
-
-**Frontend not connecting to backend:**
-
-- Check if backend is running on port 5000
-- Verify CORS is enabled
-- Check browser console for errors
-
-**Image upload failing:**
-
-- Ensure file is an image format (jpg, png, etc.)
-- Check file size is under 5MB
-- Verify OpenAI API key has sufficient credits
-
-**Recipe generation errors:**
-
-- Check OpenAI API key validity
-- Verify internet connection
-- Check OpenAI service status
-
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📞 Support
+## 📝 License
 
-For issues and questions:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- Check the troubleshooting section above
-- Review the API documentation
-- Check OpenAI API status and limits
+## 🙏 Acknowledgments
 
----
-
-**Built with ❤️ using React, TypeScript, Node.js, and OpenAI**
+- OpenAI for providing the AI models
+- Mantine UI for the beautiful components
+- All contributors who have helped improve this project
